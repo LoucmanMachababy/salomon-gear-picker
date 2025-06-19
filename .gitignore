@@ -67,3 +67,4 @@ node_modules/
 /3rdpartylicenses.txt
 /assets
 !/assets/.gitkeep
+node_modules/
