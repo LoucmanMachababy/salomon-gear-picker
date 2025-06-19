@@ -40,3 +40,30 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Additional files to ignore
+*.log
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Folders to ignore
+target/
+dist/
+node_modules/
+.idea/
+.vscode/
+
+# Don't track `files` from the build
+/browser
+/media
+/index.html
+/main-*.js
+/polyfills-*.js
+/styles-*.css
+/3rdpartylicenses.txt
+/assets
+!/assets/.gitkeep
