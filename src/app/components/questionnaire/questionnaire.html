@@ -1,0 +1,25 @@
+<div class="questionnaire">
+  <div *ngIf="!recommendedGear" class="questions">
+    <div class="question">
+      <h2>{{ questions[step].label }}</h2>
+      <div class="options">
+        <button 
+          *ngFor="let option of questions[step].options"
+          (click)="selectAnswer(option)"
+          class="option-button">
+          {{ option }}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="recommendedGear" class="recommendation">
+    <h2>Voici notre recommandation :</h2>
+    <div class="gear-card">
+      <img [src]="recommendedGear.image" [alt]="recommendedGear.name" class="gear-image">
+      <h3>{{ recommendedGear.name }}</h3>
+      <p>{{ recommendedGear.description }}</p>
+      <button (click)="restart()" class="restart-button">Recommencer</button>
+    </div>
+  </div>
+</div> 
