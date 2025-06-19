@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { Questionnaire } from './components/questionnaire/questionnaire';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [Questionnaire],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
