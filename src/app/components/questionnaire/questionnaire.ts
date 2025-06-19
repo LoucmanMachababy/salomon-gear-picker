@@ -12,10 +12,10 @@ import { GEAR_LIST, Gear } from '../../gear-data';
 export class Questionnaire {
   step = 0;
   answers = {
-    activity: '' as 'Trail' | 'Ski' | 'Randonnée' | '',
-    season: '' as 'Été' | 'Hiver' | '',
-    level: '' as 'Débutant' | 'Intermédiaire' | 'Expert' | '',
-    terrain: '' as 'Rocheux' | 'Neige' | 'Forêt' | ''
+    activity: '' as '' | 'Trail' | 'Ski' | 'Randonnée',
+    season: '' as '' | 'Été' | 'Hiver',
+    level: '' as '' | 'Débutant' | 'Intermédiaire' | 'Expert',
+    terrain: '' as '' | 'Rocheux' | 'Neige' | 'Forêt'
   };
   recommendedGear: Gear | null = null;
 
@@ -53,12 +53,14 @@ export class Questionnaire {
   }
 
   recommend() {
-    this.recommendedGear = GEAR_LIST.find(g =>
-      g.activity === this.answers.activity &&
-      g.season === this.answers.season &&
-      g.level === this.answers.level &&
-      g.terrain === this.answers.terrain
-    ) || null;
+    if (this.answers.activity && this.answers.season && this.answers.level && this.answers.terrain) {
+      this.recommendedGear = GEAR_LIST.find(g =>
+        g.activity === this.answers.activity &&
+        g.season === this.answers.season &&
+        g.level === this.answers.level &&
+        g.terrain === this.answers.terrain
+      ) || null;
+    }
   }
 
   restart() {
